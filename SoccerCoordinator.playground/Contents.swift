@@ -116,5 +116,45 @@ let herschelKrustofski: [String: Any] =
       soccerExperiecne: true,
       guardians: "Hyman and Rachel Krustofksi" ]
 
-let players = [ joeSmith, jillTanner, billBon, evaGordon, mattGill, kimmyStein, sammyAdams, karlSaygan, suzaneGreenberg, salDall,joeKavalier, benFinkelstein, diegoSoto, chloeAlaska, phillipHelm, lesClay, herschelKrustofski ]
+let players = [ joeSmith, jillTanner, billBon, evaGordon, mattGill, kimmyStein, sammyAdams, karlSaygan, suzaneGreenberg, salDall,joeKavalier, benFinkelstein, diegoSoto, chloeAlaska, arnoldWillis, phillipHelm, lesClay, herschelKrustofski ]
+
+
+// Part 2
+
+var noExperience = [Dictionary<String, Any>]()
+var hasExperience = [Dictionary<String, Any>]()
+
+// seperate experienced players from the non-expeienced
+for player in players {
+    if let experience = player[soccerExperiecne] as! Bool?, experience == true {
+        hasExperience.append(player)
+    } else {
+        noExperience.append(player)
+    }
+}
+
+var teamSharks = [Dictionary<String, Any>]()
+var teamDragons = [Dictionary<String, Any>]()
+var teamRaptors = [Dictionary<String, Any>]()
+
+// divide players into the 3 teams
+for player in 0..<hasExperience.count {
+    if player % 3 == 0 {
+        teamSharks.append(hasExperience[player])
+    } else if player % 3 == 1 {
+        teamDragons.append(hasExperience[player])
+    } else if player % 3 == 2 {
+        teamRaptors.append(hasExperience[player])
+    }
+}
+
+for player in 0..<noExperience.count {
+    if player % 3 == 0 {
+        teamSharks.append(noExperience[player])
+    } else if player % 3 == 1 {
+        teamDragons.append(noExperience[player])
+    } else if player % 3 == 2 {
+        teamRaptors.append(noExperience[player])
+    }
+}
 
