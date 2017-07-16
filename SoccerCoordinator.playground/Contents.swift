@@ -158,3 +158,27 @@ for player in 0..<noExperience.count {
     }
 }
 
+
+// Part 3
+
+var letters = [String]()
+
+// create personalized letters from each team
+for player in teamSharks {
+    let letter = "Dear \(player[guardians]!), \(player[name]!) will be attending first pratice with Sharks team on Marth 17th, at 1pm."
+    letters.append(letter)
+}
+
+for player in teamDragons {
+    let letter = "Dear \(player[guardians]!), \(player[name]!) will be attending first pratice with Dragons team on Marth 17th, at 3pm."
+    letters.append(letter)
+}
+
+for player in teamRaptors {
+    let letter = "Dear \(player[guardians]!), \(player[name]!) will be attending first pratice with Raptors team on Marth 18th, at 1pm."
+    letters.append(letter)
+}
+
+for letter in letters {
+    print(letter)
+}
